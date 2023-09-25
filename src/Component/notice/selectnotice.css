@@ -1,0 +1,7 @@
+#selectroom .main{
+    width : 1206px;
+    height : 870px;
+    /* background-color: green; */
+    border-right : solid 1.5px rgb(230, 223, 223);
+    border-left : solid 1.5px rgb(230, 223, 223);
+}

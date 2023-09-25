@@ -1,0 +1,155 @@
+/* 방 생성 페이지 */
+#makeroom {
+    width : 100%;
+    height : 1100px;
+}
+
+#makeroom .makeroomBox {
+    width : 800px;
+    height : 800px;
+    border-radius: 10px;
+    border : 2px solid black;
+    text-align: center;
+    margin : 30px auto;
+}
+
+#makeroom .title{
+    font-size: 30px;
+}
+
+#makeroom select{
+    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#makeroom input{
+    width: 337px;
+    height: 46px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#makeroom .button{
+    width : 380px;
+    height: 45px;
+    font-size: 15px;
+    background-color: black;
+    color : white;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 10px;
+    border : none;
+    margin-top : 40px;
+}
+
+#makeroom .roomgrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+#makeroom .smallTitle {
+    width: 350px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+}
+
+#makeroom .smallTitle2  {
+    width: 750px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#makeroom textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+  
+#makeroom textarea {
+    padding: 10px;
+    width : 730px;
+    height : 100px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: none;
+}
+
+#makeroom .contentTitle{
+    width: 735px;
+    height: 46px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* 생성된 방  */
+#Room {
+    width : 100%;
+    height : 870px;
+    /* background-color: red; */
+}
+
+#Room .sidebar {
+    width : 280px;
+    height : 870px;
+    border-right : solid 1.5px rgb(230, 223, 223);
+}
+
+#Room .main{
+    width : 1206px;
+    height : 870px;
+    /* background-color: green; */
+    border-right : solid 1.5px rgb(230, 223, 223);
+    border-left : solid 1.5px rgb(230, 223, 223);
+}
+
+#Room a {
+    text-decoration: none;
+    color : black;
+}
+
+#Room .menu1 {
+    width : 200px;
+    height : 50px;
+    /* background-color: green; */
+    line-height: 50px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    margin : 0 auto;
+}
+#Room .menu2 {
+    width : 200px;
+    height : 50px;
+    /* background-color: red; */
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    margin : 0 auto;
+}
+#Room .menu3 {
+    width : 200px;
+    height : 50px;
+    /* background-color: yellow; */
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    margin : 0 auto;
+}
+
+

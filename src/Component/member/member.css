@@ -1,0 +1,64 @@
+/* 회원가입 */
+#sign .signupBox {
+    width : 500px;
+    height : 370px;
+    position: absolute; left : 50%; top : 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+#sign .title{
+    font-size: 25px;
+}
+
+#sign input{
+    width: 350px;
+    height: 32px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+#sign .button{
+    width : 367px;
+    height: 38px;
+    font-size: 15px;
+    background-color: black;
+    color : white;
+    cursor: pointer;
+}
+
+/* 로그인 */
+#login .loginBox {
+    width : 500px;
+    height : 370px;
+    position: absolute; left : 50%; top : 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+#login .title{
+    font-size: 25px;
+}
+
+#login input{
+    width: 350px;
+    height: 32px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+#login .button{
+    width : 367px;
+    height: 38px;
+    font-size: 15px;
+    background-color: black;
+    color : white;
+    cursor: pointer;
+}
+
