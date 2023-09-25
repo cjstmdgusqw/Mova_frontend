@@ -1,7 +1,92 @@
 #selectroom .main{
     width : 1206px;
-    height : 870px;
+    height : 1200px;
     /* background-color: green; */
     border-right : solid 1.5px rgb(230, 223, 223);
     border-left : solid 1.5px rgb(230, 223, 223);
+    margin : 0 auto;
+}
+
+#selectroom .a{
+    width: 20px;
+    height : 10px;
+    margin : 0px auto;
+
+}
+
+#selectroom .title {
+    width : 780px;
+    height : 300px;
+    /* background-color: orange; */
+    margin : 70px auto 0 auto;
+    /* text-align: center; */
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 200px;
+    border-bottom: solid 2px rgb(230, 223, 223);
+
+}
+
+#selectroom .content {
+    width : 780px;
+    height : 260px;
+    /* background-color: aqua; */
+    margin : 0 155px;
+    /* text-align: center; */
+    font-size: 20px ;
+
+}
+
+#selectroom .box {
+    width : 780px;
+    height : 50px;
+    margin : 0 auto;
+    border-bottom: solid 2px rgb(230, 223, 223);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#selectroom li {
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+#selectroom ul {
+    display: grid;
+    grid-template-columns: 390px 390px ;
+}
+
+#selectroom span {
+    margin-left : 20px;
+    margin-right : 20px;
+}
+
+#selectroom .studyroom{
+    width : 780px;
+    height : 300px;
+    margin : 30px auto;
+    border-bottom: solid 2px rgb(230, 223, 223);
+    /* background-color: red; */
+    padding: 20px 0;
+
+    font-size: 20px;
+}
+
+#selectroom .span1{
+    font-weight: 600;
+    color : gray;
+}
+#selectroom .span2{
+    font-weight: 600;
+}
+
+#selectroom .Button{
+    width : 80px;
+    height : 80x;
+    margin : 0 0 0 892px;
+}
+
+#selectroom button {
+    width : 100px;
+    height : 50px;
 }

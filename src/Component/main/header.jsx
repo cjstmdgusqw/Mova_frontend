@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <>
-        <header>
+        <header id='header'>
             <div className="container">
                 <a className="logo" href="http://localhost:3000">MOVA</a>
                 <div>

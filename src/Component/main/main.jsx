@@ -12,6 +12,7 @@ const Main = () => {
         axios.get("http://localhost:8080/room/selectAllroom")
             .then(res => {
                 setRoom([...room, ...res.data]);
+                console.log(res.data);
             })
             .catch(err => {
                 console.log(err);

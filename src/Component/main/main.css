@@ -6,27 +6,27 @@ header {
     text-align: center;
     border-bottom: solid 1.5px rgb(230, 223, 223);
 }
-.container {
+#header .container {
     max-width: 1200px; 
     margin: 0 auto; 
     display: flex;
     justify-content: space-between; 
     align-items: center; 
 }
-.logo {
+#header .logo {
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
     color: black;
 }
-.login-btn {
+#header .login-btn {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     color: black;
     margin-left: 50px;
 }
-.create-btn {
+#header .create-btn {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
@@ -34,7 +34,7 @@ header {
 }
 
 /* 메인 */
-.mainTitle {
+#main .mainTitle {
     width : 1150px;
     height: 50px;
     margin: 0 auto;
@@ -45,7 +45,7 @@ header {
     margin-top: 30px;
 }
 
-.main {
+#main .main {
     width: 1200px;
     height: 600px;
     margin: 0 auto;
@@ -61,7 +61,7 @@ header {
     /* background-color: blue; */
 }
 
-.list {
+#main .list {
     width : 250px;
     height: 320px;
     margin : 50px auto;
