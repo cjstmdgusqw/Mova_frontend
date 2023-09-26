@@ -19,8 +19,6 @@ const Selectroom = () => {
         })
     },[params.id])
 
-    console.log(component);
-
     const Change = (e) => {
         setComponent(e.target.getAttribute("value"));
     }

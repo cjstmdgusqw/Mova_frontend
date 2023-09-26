@@ -1,12 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './room.css';
 import axios from "axios";
 
 const Makeroom = () => {
     const [room, setRoom] = useState({roomPersonnel : "", roomOnline : "", roomPeriod : "", roomDeadline : "", roomtitle : "", roomContent : ""});
+    const Id = localStorage.getItem("id");
     const handleChange = (e, fieldName) => {
         setRoom({...room, [fieldName]: e.target.value});
     }
+
+    const [memberId, setMemberId] = useState(0);
+    
+    useEffect(()=>{
+        axios.get("http://localhost:8080/member/selectmemberID",{
+            params: {
+                id: Id
+            }
+        })
+        .then(res=>{
+            setMemberId(res.data);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    },[Id]);
 
     const submit = () => {
         if (room.roomPersonnel.trim() === '') {
@@ -29,6 +46,7 @@ const Makeroom = () => {
             formData.append('roomDeadline', room.roomDeadline);
             formData.append('roomContent', room.roomContent);
             formData.append('roomTitle', room.roomtitle);
+            formData.append('memberId', memberId);
             axios.post("http://localhost:8080/room/makeroom", formData)
             .then(res => {
                 console.log(res);
@@ -109,7 +127,7 @@ const Makeroom = () => {
                             value={room.roomContent}
                             placeholder='일정 및 스터디 분야에 대한 내용을 상세히 기술해주세요'
                             onChange={(e) => setRoom({...room, roomContent:e.target.value})}
-                            rows="5"/>
+                            rows="10"/>
                     </div>
                         <input className="button" type="button" value={"방 개설하기"} onClick={submit}/>
                 </div>

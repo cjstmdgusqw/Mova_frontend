@@ -24,13 +24,30 @@ header {
     font-weight: 600;
     text-decoration: none;
     color: black;
-    margin-left: 50px;
+    margin-left: 20px;
+}
+
+#header .logout-btn{
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+    cursor: pointer;
 }
 #header .create-btn {
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     color: black;
+}
+
+#header .mypage-btn {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
 }
 
 /* 메인 */

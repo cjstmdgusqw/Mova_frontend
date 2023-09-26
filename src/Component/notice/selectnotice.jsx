@@ -7,21 +7,38 @@ const SelectNotice = () => {
 
     const roomId = useParams();
     const [notice, setNotice] = useState([]);
+    // const memberID = localStorage.getItem("id");
 
-    useEffect(()=>{
+    
+
+    // console.log(typeof(parseInt(roomId.id)));
+    // console.log(typeof(notice.member.memberId))
+
+    useEffect(() => {
         axios.get(`http://localhost:8080/room/selectroom/${roomId.id}`)
+            .then(res => {
+                setNotice(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [roomId.id]);
+
+    const HandleSubmit = () => {
+        axios.post("http://localhost:8080/member/apply", {
+                id : notice.member.memberId,
+                roomid : parseInt(roomId.id)
+        })
         .then(res=>{
-            setNotice(res.data);
+            console.log(res);   
         })
         .catch(err=>{
-            console.log(err);
+            console.log(err)
         })
-    },[]);
+    }
 
-    console.log(notice);
-
-    return(
-        <div id='selectroom'> 
+    return (
+        <div id='selectroom'>
             <div className='main'>
                 <div className='a'></div>
                 <div className='title'>
@@ -59,11 +76,16 @@ const SelectNotice = () => {
                 </div>
                 <div className='box'>스터디 컨셉</div>
                 <div className='studyroom'>
-                    {notice.roomContent}
+                   <pre className='roomcontent'> 
+                        {notice.roomContent}
+                   </pre>
                 </div>
 
                 <div className='Button'>
-                    <button>신청하기</button>
+                    { 
+                        notice && notice.member && localStorage.getItem("id") !== notice.member.id && 
+                        <button onClick={HandleSubmit}>신청하기</button> 
+                    }
                 </div>
             </div>
         </div>

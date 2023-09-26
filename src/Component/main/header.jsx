@@ -18,15 +18,16 @@ const Header = () => {
                     {userId ? 
                         (
                            
-                             <>
-                                <a className="create-btn" href="./makeroom">방개설</a>
-                                <a className="login-btn" href="/login" onClick={logout}>로그아웃</a>
+                            <>
+                                <a className="create-btn" href="http://localhost:3000/makeroom">방개설</a>
+                                <a className="mypage-btn" href="http://localhost:3000/makeroom">마이페이지</a>
+                                <a className="logout-btn" href="#!" onClick={logout}>로그아웃</a>
                             </>
                         ) : 
                         (
                             <>
-                                <a className="create-btn" href="./join">회원가입</a>
-                                <a className="login-btn" href="/login">로그인</a>
+                                <a className="create-btn" href="http://localhost:3000/join">회원가입</a>
+                                <a className="login-btn" href="http://localhost:3000/login">로그인</a>
                             </>
                         )
                     }
