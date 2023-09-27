@@ -1,0 +1,28 @@
+#community .community_main{
+    margin : 0 auto;
+    width : 924px;
+    height : 870px;
+    /* background-color: blue; */
+    overflow: hidden;
+
+    overflow-y: scroll;
+}
+
+#community .community_total{
+    margin : 0 auto;
+    width : 480px;
+    height : 700px;
+    /* background-color: blueviolet; */
+    margin : 20px auto;
+    overflow: hidden;
+    border: 2px solid rgb(153, 152, 152);
+}
+
+#community .community_picture {
+    position: inherit;
+    width : 400px;
+    height : 500px;
+    background-color: white;
+    margin : 20px auto;
+    border : 2px solid rgb(143, 141, 141);
+}

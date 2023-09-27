@@ -60,14 +60,14 @@ const Selectroom = () => {
                     {
                         component === "공지사항" && 
                         (
-                         <Comunity/>
+                        <Anouncement/>
                         )
                         
                     }
                     {
                         component === "공부 기록방" && 
                        (
-                        <Anouncement/>
+                        <Comunity/> 
                        )
                     }
                     {
