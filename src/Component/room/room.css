@@ -117,6 +117,7 @@
     border-right : solid 1.5px rgb(230, 223, 223);
     border-left : solid 1.5px rgb(230, 223, 223);
     margin : 0 auto;
+    display: flex;
 }
 
 #Room a {
@@ -133,6 +134,7 @@
     font-size: 16px;
     font-weight: 600;
     margin : 0 auto;
+    cursor: pointer;
 }
 #Room .menu2 {
     width : 200px;
@@ -142,6 +144,7 @@
     font-size: 16px;
     font-weight: 600;
     margin : 0 auto;
+    cursor: pointer;
 }
 #Room .menu3 {
     width : 200px;
@@ -151,6 +154,13 @@
     font-size: 16px;
     font-weight: 600;
     margin : 0 auto;
+    cursor: pointer;
+}
+
+#Room .room{
+    width : 925px;
+    height : 870px;
+    /* background-color: blue; */
 }
 
 

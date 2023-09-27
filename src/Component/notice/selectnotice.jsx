@@ -7,12 +7,6 @@ const SelectNotice = () => {
 
     const roomId = useParams();
     const [notice, setNotice] = useState([]);
-    // const memberID = localStorage.getItem("id");
-
-    
-
-    // console.log(typeof(parseInt(roomId.id)));
-    // console.log(typeof(notice.member.memberId))
 
     useEffect(() => {
         axios.get(`http://localhost:8080/room/selectroom/${roomId.id}`)
@@ -29,8 +23,13 @@ const SelectNotice = () => {
                 id : notice.member.memberId,
                 roomid : parseInt(roomId.id)
         })
-        .then(res=>{
-            console.log(res);   
+        .then(res=>{ 
+            if(localStorage.getItem("id") === null){
+                alert("로그인이 필요한 서비스입니다");
+                window.location.replace("/login");
+            }else{
+                alert(res.data);
+            }
         })
         .catch(err=>{
             console.log(err)

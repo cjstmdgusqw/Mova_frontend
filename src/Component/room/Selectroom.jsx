@@ -9,8 +9,23 @@ const Selectroom = () => {
     const params = useParams();
     let [component, setComponent] = useState("");
 
+    console.log(typeof(params.id))
+
     useEffect(()=>{
-        axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
+        // axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
+        // .then(res=>{
+        //     console.log(res.data);
+        // })    
+        // .catch(err=>{
+        //     console.log(err);
+        // })
+
+        axios.get("http://localhost:8080/member/selectMember", {
+            params : {
+                state : 1,
+                roomid : params.id
+            }
+        })
         .then(res=>{
             console.log(res.data);
         })    
