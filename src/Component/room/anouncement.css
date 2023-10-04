@@ -1,0 +1,73 @@
+#anouncement table {
+    border-collapse: collapse;
+    width : 100%;
+}
+
+#anouncement th, td {
+    padding: 10px;
+    
+}
+
+#anouncement .anouncement{
+    width : 800px;
+    height : 400px;
+    margin : 20px auto;
+    /* background-color: green; */
+}
+
+#anouncement table th {
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+#anouncement table td{
+    border-bottom: 1px solid rgb(219, 218, 218);
+    cursor: pointer;
+}
+
+#anouncement tr:hover { 
+    background-color: #F5F5F5;
+}
+
+#anouncement .write {
+    width : 800px;
+    height : 50px;
+    margin : 0 auto;
+    /* background-color: yellow; */
+    position: relative;
+}
+
+#anouncement .writeButton{
+    background-color: white;
+    color : black;
+    width : 100px;
+    height : 45px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+
+    float: right;
+    cursor: pointer;
+}
+
+#anouncement .writeButton:hover {
+    background-color: black;
+    color : white;
+    transition: 0.5s;
+}
+
+#anouncement .writeButton:not(:hover) {
+    background-color: white;
+    color : black;
+    transition: 0.5s;
+}
+
+#anouncement .anouncement_title {
+    width : 800px;
+    height : 50px;
+    /* background-color: red; */
+    margin: 10px auto;
+
+    font-size: 25px;
+    line-height: 50px;
+}

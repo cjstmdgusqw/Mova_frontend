@@ -5,21 +5,12 @@ import './room.css';
 import Comunity from "./comunity";
 import Anouncement from "./anouncement";
 
-const Selectroom = () => {
+
+const Selectroom = (props) => {
     const params = useParams();
     let [component, setComponent] = useState("");
 
-    console.log(typeof(params.id))
-
     useEffect(()=>{
-        // axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
-        // .then(res=>{
-        //     console.log(res.data);
-        // })    
-        // .catch(err=>{
-        //     console.log(err);
-        // })
-
         axios.get("http://localhost:8080/member/selectMember", {
             params : {
                 state : 1,
@@ -37,6 +28,10 @@ const Selectroom = () => {
     const Change = (e) => {
         setComponent(e.target.getAttribute("value"));
     }
+
+    const handleChildData = (data) => {
+        console.log("Data from child:", data);
+      }
 
     return (
         <div id="Room">
@@ -58,23 +53,17 @@ const Selectroom = () => {
                 </div>
                 <div className="room">  
                     {
-                        component === "공지사항" && 
+                        component === "공지사항" &&
                         (
-                        <Anouncement/>
+                            <Anouncement roomid={params.id} onChildData={handleChildData} />
                         )
                         
                     }
                     {
                         component === "공부 기록방" && 
                        (
-                        <Comunity/> 
+                            <Comunity/> 
                        )
-                    }
-                    {
-                        component === "" && 
-                        (
-                            <></>
-                        )
                     }
                 </div>
             </div>

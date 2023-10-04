@@ -7,6 +7,7 @@ import Header from './Component/main/header';
 import Makeroom from './Component/room/makeroom';
 import Selectroom from './Component/room/Selectroom';
 import SelectNotice from './Component/notice/selectnotice';
+import WriteAnouncement from './Component/writepage/writeAnouncement';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/makeroom/' element={<Makeroom/>}/>
         <Route exact path='/room/:id/' element={<Selectroom/>}/>
         <Route exact path='/selectnotice/:id/' element={<SelectNotice/>}/>
+        <Route exact path='/room/writeanouncement/:id' element={<WriteAnouncement/>}/>
       </Routes>
     </>
   );

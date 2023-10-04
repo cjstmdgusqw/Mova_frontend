@@ -1,0 +1,77 @@
+#writeanouncement .writeanouncement{
+    width : 800px;
+    height : 800px;
+    border-radius: 10px;
+    border : 2px solid black;
+    text-align: center;
+    margin : 30px auto;
+}
+
+#writeanouncement .title{
+    height: 100px;
+    width : 100px;
+    margin: 0 auto;
+    line-height: 100px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#writeanouncement textarea{
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+#writeanouncement textarea { 
+    padding: 10px;
+    width : 730px;
+    height : 200px;
+    line-height: 1.5;
+    resize: none;
+}
+
+#writeanouncement .smallTitle2{
+    width: 750px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#writeanouncement .contentTitle{
+    width: 735px;
+    height: 46px;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#writeanouncement .buttonClick {
+    width : 750px;
+    margin : 20px auto;
+}
+
+#writeanouncement input {
+    margin : 0 30px 0 30px;
+    width : 100px;
+    height : 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#writeanouncement .button2 {
+    background-color: white;
+    color : black;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#writeanouncement .button {
+    background-color: black;
+    color : white;
+    cursor: pointer;
+    border-radius: 4px;
+    border : none;
+}
