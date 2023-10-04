@@ -30,6 +30,37 @@
     cursor: pointer;
 }
 
+#sign .hidden{
+    display: none;
+}
+
+#sign .label {
+    display: inline-block;
+    height : 200px;
+    width : 200px;
+   
+}
+
+#sign .profile {
+    height : 200px;
+    width : 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin : 0 auto;
+    /* background-color: red; */
+    cursor: pointer;
+
+    line-height: 185px;
+    font-size: 70px;
+}
+
+#sign .profileImg{
+    height: 200px;
+    width : 200px;
+    border-radius: 50%;
+    border : 1.5px solid black;
+}
+
 /* 로그인 */
 #login .loginBox {
     width : 500px;
@@ -61,4 +92,6 @@
     color : white;
     cursor: pointer;
 }
+
+
 

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import './member.css';
 
 const Join = () => {
   const [member, setMember] = useState({name: "",Id: "",password: "", password2 : "", nickname: "", });
+  const [imgFile, setImgFile] = useState("");
+  const imgRef = useRef();
 
   const handleSubmit = () => {
     if(member.password.trim() !== member.password2.trim()){
@@ -30,13 +32,50 @@ const Join = () => {
           console.log(err);
       })
     }
-    
+  };
+
+  const saveImgFile = () => {
+    const file = imgRef.current.files[0];
+    console.log(file.name)
+    if (!file) {
+      console.error("파일이 선택되지 않았습니다.");
+      return;
+    }
+  
+    if (!(file instanceof Blob)) {
+      console.error("올바른 파일 형식이 아닙니다."); // 이거는 다시 봐야함!
+      return;
+    }
+  
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImgFile(reader.result);
+    };
   };
 
   return (
     <div id="sign">
-      <div className="signupBox">
+      <div className="signupBox"> 
         <h3 className="title">회원가입</h3>
+        <label htmlFor="file">
+          {
+            imgFile === "" && 
+            <div className="profile"> + </div>
+          }
+          {
+            imgFile !== "" &&
+            <img
+            src={imgFile ? imgFile : ``}
+            className="profileImg"
+          />
+          }
+        
+          
+        </label>
+        
+       
+        <input className="hidden" type="file" id="file" accept="image/*" onChange={saveImgFile} ref={imgRef}></input>
         <input type="text"
           placeholder="이름"
           value={member.name}

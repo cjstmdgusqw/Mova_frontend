@@ -31,7 +31,7 @@ const Selectroom = (props) => {
 
     const handleChildData = (data) => {
         console.log("Data from child:", data);
-      }
+    }
 
     return (
         <div id="Room">

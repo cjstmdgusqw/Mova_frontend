@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react'
 import './anouncement.css'
 import axios from "axios";
+import DetailAnnouncement from './detailAnnouncement';
 
 const Anouncement = (Props) => {
 
     const [announcement,setAnnouncement] = useState([])
+    const [show, setShow] = useState(false);
 
     const movePage = () => {
         window.location.replace(`http://localhost:3000/room/writeanouncement/${Props.roomid}`)
     }
 
-    const sendDataToParent = () => {
-        const data = "Data from child component";
-        Props.onChildData(data); // 콜백 함수 호출하여 데이터 전달
+    const sendData = () => {
+        setShow(!show);
     }
 
     useEffect(() => {
@@ -32,28 +33,28 @@ const Anouncement = (Props) => {
 
     return (
         <div id='anouncement'>
-            <div className='anouncement_title'>
+            <div className={`anouncement_title ${show ? 'noshow' : 'show'}`}>
                 공지사항
             </div>
-            <div className='anouncement'>
+            <div className={`anouncement ${show ? 'noshow' : 'show'}`}>
                 <table>
                     <thead>
-                        <th>글 번호</th>
-                        <th>제목</th>
-                        <th>글쓴이</th>
-                        <th>작성시간</th>
-                        <th>조회수</th>
+                        <tr>
+                        <th width="30">작성시간</th>
+                        <th width="30">글쓴이</th>
+                        <th width="130">제목</th>
+                        <th width="20">조회수</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {
                             announcement.map(list => {
                                 return (
-                                    <tr>
-                                        <td>{list.announcement_id}</td>
-                                        <td>{list.announcement_title}</td>
-                                        <td>{list.room.member.nickname}</td>
-                                        <td>{list.creation_date}</td>
-                                        <td>{list.view_count}</td>
+                                    <tr key={list.announcement_id} onClick={sendData}>
+                                        <td width="50">{list.creation_date}</td>
+                                        <td width="50">{list.room.member.nickname}</td>
+                                        <td width="50">{list.announcement_title}</td>
+                                        <td width="50">{list.view_count}</td>
                                     </tr>       
                                 )
                             })
@@ -61,8 +62,11 @@ const Anouncement = (Props) => {
                     </tbody>
                 </table>
             </div>
-            <div className='write'>
+            <div className={`write ${show ? 'noshow' : 'show'}`}>
                 <input className='writeButton' type='button' value='글쓰기' onClick={movePage}/> 
+            </div>
+            <div className={`announcementModal ${show ? 'show' : 'noshow'}`}>
+                <DetailAnnouncement/>
             </div>
 
         </div>

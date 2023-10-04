@@ -35,8 +35,22 @@ const Main = () => {
                             return (
                                 <a className="a" key={roomlist.roomId} href={`http://localhost:3000/selectnotice/${roomlist.roomId}`}>
                                     <div className="list" value={roomlist.roomId} >
-                                        <div>
-                                            {roomlist.roomId}
+                                        <div className="roomDeadline">
+                                            마감일 | {roomlist.roomDeadline}
+                                        </div>
+
+                                        <div className="roomContent">
+                                            {roomlist.roomTitle}
+                                        </div>
+
+                                        <div className="roomPersonel">
+                                            <div>
+                                                진행방법 : {roomlist.roomOnline}
+                                            </div>
+                                            <div>
+                                                인원 수 : {roomlist.roomPersonnel}
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </a>

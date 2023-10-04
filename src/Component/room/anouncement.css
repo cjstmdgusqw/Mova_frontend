@@ -71,3 +71,18 @@
     font-size: 25px;
     line-height: 50px;
 }
+
+.show { 
+    display: block;
+}
+
+.noshow {
+    display: none;
+}
+
+#detailannoun .detail{
+    width : 650px;
+    height: 800px;
+    background-color: red;
+    margin : 20px auto;
+}
