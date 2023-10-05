@@ -7,20 +7,36 @@ const SelectNotice = () => {
 
     const roomId = useParams();
     const [notice, setNotice] = useState([]);
+    const memberId = localStorage.getItem("id");
+    const [memberid, setMemberid] = useState();
 
     useEffect(() => {
         axios.get(`http://localhost:8080/room/selectroom/${roomId.id}`)
             .then(res => {
+                console.log(res.data);
                 setNotice(res.data);
             })
             .catch(err => {
                 console.log(err);
             })
-    }, [roomId.id]);
+
+        axios.get(`http://localhost:8080/member/selectmemberID/`,{
+            params:{
+                id : memberId
+            }
+        })
+        .then(res=>{
+            console.log(res.data);
+            setMemberid(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }, [roomId.id, memberId]);
 
     const HandleSubmit = () => {
         axios.post("http://localhost:8080/member/apply", {
-                id : notice.member.memberId,
+                id : memberid,
                 roomid : parseInt(roomId.id)
         })
         .then(res=>{ 

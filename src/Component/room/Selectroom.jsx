@@ -4,29 +4,30 @@ import { useParams } from "react-router-dom";
 import './room.css';
 import Comunity from "./comunity";
 import Anouncement from "./anouncement";
+import Memberlist from "./memberlist";
 
 
 const Selectroom = (props) => {
     const params = useParams();
-    let [component, setComponent] = useState("");
+    let [component, setComponent] = useState("공지사항");
+    const memberId = localStorage.getItem("id");
+    const [topmember, setTopmember] = useState();
+
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/member/selectMember", {
-            params : {
-                state : 1,
-                roomid : params.id
-            }
-        })
+        axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
         .then(res=>{
             console.log(res.data);
-        })    
+            setTopmember(res.data.member.id);
+        })
         .catch(err=>{
             console.log(err);
-        })
+        });
     },[params.id])
 
     const Change = (e) => {
-        setComponent(e.target.getAttribute("value"));
+        const value = e.target.getAttribute("value")
+        setComponent(value);
     }
 
     const handleChildData = (data) => {
@@ -50,12 +51,20 @@ const Selectroom = (props) => {
                     <div className="menu3">
                         <a>온라인바로가기</a>
                     </div>  
+                    {
+                        memberId == topmember &&
+                        <div className="menu4">
+                            <div
+                            value = "멤버리스트"
+                            onClick={Change}>멤버리스트</div>
+                        </div>
+                    }
                 </div>
                 <div className="room">  
                     {
                         component === "공지사항" &&
                         (
-                            <Anouncement roomid={params.id} onChildData={handleChildData} />
+                            <Anouncement roomid={params.id} topmember={topmember} onChildData={handleChildData} />
                         )
                         
                     }
@@ -64,6 +73,12 @@ const Selectroom = (props) => {
                        (
                             <Comunity/> 
                        )
+                    }
+                    {
+                        component === "멤버리스트" && memberId == topmember &&
+                        (
+                            <Memberlist/>
+                        )
                     }
                 </div>
             </div>

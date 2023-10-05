@@ -72,6 +72,32 @@
     line-height: 50px;
 }
 
+#anouncement .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#anouncement .pre {
+    width : 100px;
+    height: 100px;
+}
+
+#anouncement .prebutton {
+    width : 40px;
+    height : 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: 35px;
+    font-size: 30px;
+    cursor: pointer;
+
+    margin-left: 20px;
+    margin-top : 20px;
+}
+
 .show { 
     display: block;
 }
@@ -83,6 +109,6 @@
 #detailannoun .detail{
     width : 650px;
     height: 800px;
-    background-color: red;
     margin : 20px auto;
+    border: 1px solid black;
 }
