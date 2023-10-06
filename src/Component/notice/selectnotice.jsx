@@ -75,14 +75,6 @@ const SelectNotice = () => {
                                 <span className='span1'>모집 마감</span>
                                 <span className='span2'>{notice.roomDeadline}</span>
                             </li>
-                            {/* <li>
-                                <span>모집인원</span>
-                                <span>{notice.roomPersonnel}</span>
-                            </li>
-                            <li>
-                                <span>모집인원</span>
-                                <span>{notice.roomPersonnel}</span>
-                            </li> */}
                         </ul>
                     </section>
                 </div>
