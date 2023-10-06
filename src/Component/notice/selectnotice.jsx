@@ -40,14 +40,11 @@ const SelectNotice = () => {
                 roomid : parseInt(roomId.id)
         })
         .then(res=>{ 
-            if(localStorage.getItem("id") === null){
-                alert("로그인이 필요한 서비스입니다");
-                window.location.replace("/login");
-            }else{
-                alert(res.data);
-            }
+            alert(res.data);
         })
         .catch(err=>{
+            alert("로그인이 필요한 서비스입니다");
+            window.location.replace("/login");
             console.log(err)
         })
     }
