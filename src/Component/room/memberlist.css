@@ -1,0 +1,77 @@
+#memberlist .memberlist {
+    width : 800px;
+    height : 60px;
+    /* background-color: red */
+    margin : 40px auto 0 auto;
+
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+
+    /* border-bottom: 1.5px solid rgb(230, 223, 223); */
+}
+
+#memberlist table {
+    border-collapse: collapse;
+    width : 800px;
+    margin : 0 auto;
+}
+
+#memberlist th, td {
+    padding: 10px;
+    
+}
+#memberlist table th {
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+#memberlist table td{
+    border-bottom: 1px solid rgb(219, 218, 218);
+}
+
+#memberlist .noshow {
+    display: none;
+}
+
+
+
+#memberlist .memberlistapply {
+    width : 800px;
+    height : 60px;
+    /* background-color: red */
+    margin : 50px auto 0 auto;
+
+    line-height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+
+    /* border-bottom: 1.5px solid rgb(230, 223, 223); */
+}
+
+#memberlist .correctButton {
+    width : 60px;
+    height : 30px;
+    background-color: green;
+    color : white;
+    border-radius: 4px;
+    border : none;
+
+    cursor: pointer;
+}
+
+#memberlist .failButton {
+    width : 60px;
+    height : 30px;
+    margin-left: 10px;
+    background-color: red;
+    color : white;
+    border-radius: 4px;
+    border : none;
+
+    cursor: pointer;
+}
+
+#memberlist .nickname {
+    font-weight: 600;
+}

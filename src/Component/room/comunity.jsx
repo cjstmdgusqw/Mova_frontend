@@ -9,6 +9,18 @@ const Comunity = () => {
                 <div className="community_total">
                     <div className="community_picture"></div>
                 </div>
+                <div className="box"></div>
+                <div className="community_total">
+                    <div className="community_picture"></div>
+                </div>
+                <div className="box"></div>
+                <div className="community_total">
+                    <div className="community_picture"></div>
+                </div>
+                <div className="box"></div>
+                <div className="community_total">
+                    <div className="community_picture"></div>
+                </div>
             </div>
         </div>
     )

@@ -3,9 +3,23 @@ import axios from "axios";
 import './member.css';
 
 const Join = () => {
-  const [member, setMember] = useState({name: "",Id: "",password: "", password2 : "", nickname: "", });
+  const [member, setMember] = useState({name: "",Id: "",password: "", password2 : "", nickname: "", filename : ""});
   const [imgFile, setImgFile] = useState("");
+
+  const [file, setFile] = useState();
   const imgRef = useRef();
+
+  const selectImg = (e) => {
+    const imgFile = e.target;
+    const file = imgFile.files[0];
+    if (imgFile.files && imgFile.files[0]) {
+        const reader = new FileReader()
+        reader.onload = () => {
+          setImgFile(reader.result);
+        }
+        reader.readAsDataURL(file);
+    }
+  }
 
   const handleSubmit = () => {
     if(member.password.trim() !== member.password2.trim()){
@@ -22,6 +36,8 @@ const Join = () => {
       formData.append('Id', member.Id);
       formData.append('password', member.password); 
       formData.append('nickname', member.nickname);
+      formData.append("filename", member.filename)
+      formData.append('file', file);
       axios.post("http://localhost:8080/member/signup", formData)
       .then(res=>{
           console.log(res);
@@ -34,24 +50,13 @@ const Join = () => {
     }
   };
 
-  const saveImgFile = () => {
-    const file = imgRef.current.files[0];
-    console.log(file.name)
-    if (!file) {
-      console.error("파일이 선택되지 않았습니다.");
-      return;
-    }
-  
-    if (!(file instanceof Blob)) {
-      console.error("올바른 파일 형식이 아닙니다."); // 이거는 다시 봐야함!
-      return;
-    }
-  
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImgFile(reader.result);
-    };
+  const saveImgFile = (e) => {
+    selectImg(e)
+    console.log(e);
+
+    setFile(e.target.files[0]);
+
+    setMember({...member, 'filename' : e.target.files[0].name});
   };
 
   return (
@@ -70,8 +75,6 @@ const Join = () => {
             className="profileImg"
           />
           }
-        
-          
         </label>
         
        
