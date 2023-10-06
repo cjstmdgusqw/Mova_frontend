@@ -1,0 +1,114 @@
+.boxtitle {
+    width : 700px;
+    height : 40px;
+    /* background-color: black; */
+    margin : 5px auto 0 auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.boxtitle2 {
+    width : 360px;
+    height : 40px;
+    /* background-color: black; */
+    margin : 5px auto 0 auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 600;
+}
+#sub1 .roomlist {
+    width : 870px;
+    height : 285px;
+    margin : 0 auto;
+    /* background-color: blue; */
+    border : 1.2px solid rgb(196, 192, 192);
+    border-radius: 20px;
+
+    overflow-y: scroll;
+}
+
+#sub1 .room {
+    width : 800px;
+    height : 65px;
+    border-radius: 25px;
+    /* background-color: red; */
+    margin : 20px auto;
+    border: 1.5px solid rgb(187, 184, 184);
+
+    display: flex;
+    line-height: 70px;
+    padding-left: 20px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#sub1 .room:hover {
+    background-color: black;
+    color : white;
+}
+
+#sub1 .writer {
+    width : 250px;
+    height : 65px;
+}
+
+#sub1 .title {
+    width : 400px;
+    height : 65px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sub2 .roomlist2 {
+    width : 400px;
+    height : 285px;
+    margin : 0 auto;
+    /* background-color: blue; */
+    border : 1.2px solid rgb(196, 192, 192);
+    border-radius: 20px;
+
+    overflow-y: scroll;
+}
+
+#sub2 .room {
+    width : 350px;
+    height : 50px;
+    border-radius: 25px;
+    /* background-color: red; */
+    margin : 20px auto;
+    border: 1.5px solid rgb(187, 184, 184);
+
+    display: flex;
+    line-height: 50px;
+    padding-left: 20px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#sub2 .writer {
+    width : 130px;
+    height : 65px;
+}
+
+#sub2 .title {
+    height : 65px;
+    width : 330px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sub2 .room:hover {
+    background-color: black;
+    color : white;
+}

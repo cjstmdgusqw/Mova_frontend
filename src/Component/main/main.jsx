@@ -28,7 +28,7 @@ const Main = () => {
     return (
         <>
             <div id="main">
-                <div className="mainTitle2">내가 참여하고있는 방</div>
+                
                 <div className="mainTitle">같이 스터디할 멤버들을 찾아보세요</div>
                 <div className="main">
                     {

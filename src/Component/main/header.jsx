@@ -13,7 +13,6 @@ const Header = () => {
             }
         })
         .then(res=>{
-            console.log(res.data);
             SetMemberid(res.data);
         })
         .catch(err => {
@@ -33,7 +32,6 @@ const Header = () => {
                 <div>
                     {userId ? 
                         (
-                           
                             <>
                                 <a className="create-btn" href="http://localhost:3000/makeroom">방개설</a>
                                 <a className="mypage-btn" href={`http://localhost:3000/mypage/${memberid}`}>마이페이지</a>
