@@ -1,0 +1,110 @@
+#writecommunity .writecommunity{
+    width : 800px;
+    max-height: 1500px;
+    border-radius: 10px;
+    border : 2px solid black;
+    text-align: center;
+    margin : 30px auto;
+}
+
+#writecommunity .title{
+    height: 100px;
+    width : 200px;
+    margin: 0 auto;
+    line-height: 100px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+#writecommunity textarea{
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+#writecommunity textarea { 
+    padding: 10px;
+    width : 730px;
+    height : 200px;
+    line-height: 1.5;
+    resize: none;
+}
+
+#writecommunity .smallTitle2{
+    width: 750px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#writecommunity .contentTitle{
+    width: 735px;
+    height: 46px;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#writecommunity .buttonClick {
+    width : 750px;
+    margin : 20px auto;
+}
+
+#writecommunity input {
+    margin : 0 30px 0 30px;
+    width : 100px;
+    height : 40px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#writecommunity .button2 {
+    background-color: white;
+    color : black;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#writecommunity .button {
+    background-color: black;
+    color : white;
+    cursor: pointer;
+    border-radius: 4px;
+    border : none;
+}
+
+#writecommunity .filepic {
+    width : 300px;
+}
+
+#writecommunity .profile {
+    width : 300px;
+    height : 200px;
+    background-color: white;
+    font-size: 70px;
+    line-height: 190px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin : 0 auto;
+}
+
+#writecommunity .profileImg {
+    max-width : 100%;
+    max-width : 100%;
+    vertical-align: middle;
+}
+
+#writecommunity .file {
+    display: none;
+}
+
+#writecommunity .image-container {
+    width : 300px;
+    height : auto;
+    text-align: center;
+    border : 2px solid black;
+    margin : 0 auto;
+    overflow: hidden;
+}

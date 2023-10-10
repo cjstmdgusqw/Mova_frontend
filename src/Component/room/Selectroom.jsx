@@ -71,7 +71,7 @@ const Selectroom = (props) => {
                     {
                         component === "공부 기록방" && 
                        (
-                            <Comunity/> 
+                            <Comunity roomid={params.id}/> 
                        )
                     }
                     {

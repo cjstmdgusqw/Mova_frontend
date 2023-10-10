@@ -52,7 +52,6 @@ const Join = () => {
 
   const saveImgFile = (e) => {
     selectImg(e)
-    console.log(e);
 
     setFile(e.target.files[0]);
 

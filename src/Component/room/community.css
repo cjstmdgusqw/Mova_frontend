@@ -1,4 +1,4 @@
-#community .community_main{
+#community .community_main {
     margin : 0 auto;
     width : 924px;
     height : 870px;
@@ -8,21 +8,72 @@
     overflow-y: scroll;
 }
 
-#community .community_total{
+#community .box2 {
+    width : 860px;
+    height : 80px;
+    /* background-color: black; */
     margin : 0 auto;
-    width : 480px;
-    height : 700px;
+}
+
+#community .community_button {
+    width :100px;
+    height : 40px;
+    float: right;
+    margin-top: 20px;
+
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    border : 1.2px solid black;
+
+    cursor: pointer;
+    background-color: white;
+}   
+
+#community .community_total {
+    margin : 0 auto;
+    width : 860px;
+    height : 250px;
     /* background-color: blueviolet; */
     margin : 20px auto;
     overflow: hidden;
     border: 2px solid rgb(153, 152, 152);
+
+    display: flex;
 }
 
 #community .community_picture {
     position: inherit;
-    width : 400px;
-    height : 500px;
+    width : 200px;
+    height : 200px;
     background-color: white;
-    margin : 20px auto;
-    border : 2px solid rgb(143, 141, 141);
+    border : 1px solid rgb(143, 141, 141);
+    /* background-color: red; */
+    margin : 20px 20px 20px 20px;
+}
+
+#community .community_sub {
+    width : 600px;
+    height : 200px;
+    /* background-color: orange; */
+    margin : 20px 0px 0px 20px;
+}
+
+#commjnity_sub .community_profile {
+    width : 600px;
+    height : 60px;
+    /* background-color: yellow; */
+    border-bottom : 1px solid rgb(143, 141, 141);
+}
+
+#commjnity_sub .community_content {
+    width : 600px;
+    height : 90px;
+    /* background-color: green; */
+}
+
+#commjnity_sub .community_count {
+    width : 600px;
+    height : 50px;
+    /* background-color: beige; */
 }

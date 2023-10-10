@@ -9,6 +9,7 @@ import Selectroom from './Component/room/Selectroom';
 import SelectNotice from './Component/notice/selectnotice';
 import WriteAnouncement from './Component/writepage/writeAnouncement';
 import Mypage from './Component/member/mypage';
+import WriteCommunity from './Component/writepage/writeCommunity';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/room/:id/' element={<Selectroom/>}/>
         <Route exact path='/selectnotice/:id/' element={<SelectNotice/>}/>
         <Route exact path='/room/writeanouncement/:id' element={<WriteAnouncement/>}/>
+        <Route exact path='/room/writecommunity/:id' element={<WriteCommunity/>}/>
       </Routes>
     </>
   );
