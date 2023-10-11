@@ -33,7 +33,7 @@ const Anouncement = (Props) => {
             }
         })
         .then(res=>{
-            console.log(res.data);
+            // console.log(res.data);
             setAnnouncement([...announcement, ...res.data]);
         })
         .catch(err=>{

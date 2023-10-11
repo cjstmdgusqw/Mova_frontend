@@ -1,0 +1,88 @@
+#community_modal .detail_total {
+    width : 800px;
+    height : 700px;
+    /* background-color: black; */
+}
+
+#community_modal .detail_profile {
+    width : 800px;
+    height : 100px;
+    /* background-color: yellow; */
+
+    display: flex;
+}
+
+#community_modal .profile_image {
+    width : 80px;
+    height : 80px;
+    border-radius: 50%;
+    border: 1.2px solid rgb(185, 184, 184);
+    cursor: pointer;
+}
+
+#community_modal .profile_name {
+    width : 100px;
+    height : 90px;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 80px;
+    /* background-color: red; */
+
+    margin-left : 15px;
+    cursor: pointer;
+}
+
+#community_modal .detail_picture{
+    width : 800px;
+    height : 420px;
+    /* background-color: blue; */
+}
+
+#community_modal .image-container {
+    width : 500px;
+    height : 420px;
+    text-align: center;
+    /* border : 2px solid black; */
+    margin : 0 auto;
+    overflow: hidden;
+}
+
+#community_modal .image-container {
+    height: 420px; 
+    text-align: center;
+    overflow: hidden;
+}
+
+#community_modal .profileImg {
+    max-height: 100%; 
+    max-width: 100%; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+
+#community_modal .detail_content {
+    width : 800px;
+    height : 120px;
+    background-color: chartreuse;
+} 
+
+#community_modal .detail_total2 {
+    width : 370px;
+    height: 700px;
+    background-color: red;
+    margin-left : 20px
+}
+
+#community_modal .detail_comment {
+    width : 370px;
+    height : 570px;
+    background-color: aqua;
+}
+
+#community_modal .detail_commentwrite {
+    width : 370px;
+    height : 130px;
+    background-color: orange;
+}
+

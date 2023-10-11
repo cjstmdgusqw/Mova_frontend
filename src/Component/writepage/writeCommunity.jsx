@@ -26,6 +26,7 @@ const WriteCommunity = () => {
         })
         .then(res=>{
             setMemberId(res.data);
+            window.location.replace(`http://localhost:3000/room/${roomid}`)
         })
         .catch(err=>{
             console.log(err)
