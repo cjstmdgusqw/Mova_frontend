@@ -36,7 +36,7 @@ const Login = () => {
                         value={member.password}
                         onChange={(e) => setMember({ ...member, password: e.target.value })}
                     />
-                    <input className="button" type="button" value={"제출"} onClick={handleSubmit} />
+                    <input className="button" type="button" value={"로그인"} onClick={handleSubmit} />
                     
                 </div>
             </div>

@@ -4,15 +4,34 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import axios from "axios";
+import { useParams } from 'react-router';
 
 const WriteCommunity = () => {
     const [imgName, setImgName] = useState([]);
     const [community, setCommunity] = useState({ community_title: "", community_content: ""})
     const [imgFiles, setImgFiles] = useState([]);
+    const [memberid, setMemberId] = useState();
+    const roomid = useParams().id;
+    const id = localStorage.getItem("id");
 
     const [file, setFile] = useState();
 
     const imgRef = useRef();
+
+    useEffect(()=>{
+        axios.get('http://localhost:8080/member/selectmemberID', {
+            params : {
+                id : id
+            }
+        })
+        .then(res=>{
+            setMemberId(res.data);
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    });
+
 
     const selectimg = (e) => {
         const files = e.target.files;
@@ -64,10 +83,25 @@ const WriteCommunity = () => {
             formData.append('title', community.community_title)
             formData.append('content', community.community_content)
             formData.append('filename', imgName);
-            formData.append('file', file)
-            axios.post("http://localhost:8080/room/makeroom", )
+            formData.append('memberid',memberid);
+            // formData.append('file', file);
+            Object.values(file).forEach((file)=> formData.append('file', file));
+            axios.post(`http://localhost:8080/community/writefeed/${roomid}`, formData, {
+                headers : {
+                    "Content-Type": `multipart/form-data; `
+                }
+            })
+            .then(res=>{
+                console.log(res.data);
+            })
+            .catch(err=>{
+                console.log(err);
+            })
         }
     }
+
+    console.log(file);
+    console.log(imgFiles);
 
     return (
         <div id="writecommunity">

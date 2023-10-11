@@ -8,7 +8,8 @@ const Sub1 = (Props) => {
     useEffect(()=>{
         axios.get("http://localhost:8080/room/selectcorrectroom",{
             params :{
-                id : memberid
+                id : memberid,
+                state : 1
             }
         })
         .then(res=>{

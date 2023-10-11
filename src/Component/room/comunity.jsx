@@ -1,10 +1,25 @@
 import axios from "axios";
 import './community.css'
+import { useEffect } from "react";
 
 const Comunity = (Props) => {
     const movePage = () => {
         window.location.replace(`http://localhost:3000/room/writecommunity/${Props.roomid}`)
     }
+
+    useEffect(()=>{
+        axios.get('http://localhost:8080/community/selectfeed', {
+            params :{
+                roomid : Props.roomid
+            }
+        })
+        .then(res=>{
+            console.log(res.data);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    },[])
 
     return(
         <div id="community">
