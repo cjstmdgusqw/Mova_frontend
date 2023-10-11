@@ -12,8 +12,7 @@ const Selectroom = () => {
     let [component, setComponent] = useState("공지사항");
     const memberId = localStorage.getItem("id");
     const [topmember, setTopmember] = useState();
-
-    console.log(params.id);
+    
     useEffect(()=>{
         axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
         .then(res=>{

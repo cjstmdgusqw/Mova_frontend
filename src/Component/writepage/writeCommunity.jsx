@@ -61,8 +61,6 @@ const WriteCommunity = () => {
         setFile(e.target.files);
     };
 
-    console.log(file);
-
     const settings = {
         dots: true,
         infinite: true,
@@ -84,7 +82,6 @@ const WriteCommunity = () => {
             formData.append('content', community.community_content)
             formData.append('filename', imgName);
             formData.append('memberid',memberid);
-            // formData.append('file', file);
             Object.values(file).forEach((file)=> formData.append('file', file));
             axios.post(`http://localhost:8080/community/writefeed/${roomid}`, formData, {
                 headers : {
@@ -99,9 +96,6 @@ const WriteCommunity = () => {
             })
         }
     }
-
-    console.log(file);
-    console.log(imgFiles);
 
     return (
         <div id="writecommunity">
