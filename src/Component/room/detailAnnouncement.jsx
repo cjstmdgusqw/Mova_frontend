@@ -49,8 +49,6 @@ const DetailAnnouncement = (Props) => {
         Props.toggleShow();
     };
 
-    console.log(announcement);
-
     return (
         <div id="detailannoun">
             <div className="detail">
@@ -58,7 +56,6 @@ const DetailAnnouncement = (Props) => {
                     <div className='prebutton' onClick={Show}>&lt;</div>
                     <div className="detail_title">{announcement.announcement_title}</div>
                     <pre className="detail_content">{announcement.announcement_content}</pre>
-
                     <div className="detail_bottom">
                         <div className="detail_writer">작성자 : {announcement.room.member.nickname}</div>
                         <div className="detail_date">작성날짜 : {announcement.creation_date}</div>

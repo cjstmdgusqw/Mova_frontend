@@ -6,8 +6,10 @@
 
 #community_modal .detail_profile {
     width : 800px;
-    height : 100px;
+    height : 85px;
     /* background-color: yellow; */
+    border-bottom: solid 1.2px rgb(233, 226, 226);
+    margin-bottom: 15px;
 
     display: flex;
 }
@@ -64,10 +66,11 @@
 #community_modal .detail_content {
     width : 780px;
     height : 110px;
-    background-color: chartreuse;
 
-    padding-left: 20px;
+    padding-left: 10px;
     padding-top : 20px;
+
+    border-top: solid 1.2px rgb(233, 226, 226);
 } 
 
 #community_modal .detail_button {
@@ -81,18 +84,132 @@
 #community_modal .detail_total2 {
     width : 370px;
     height: 700px;
-    background-color: red;
-    margin-left : 20px
+    /* background-color: red; */
+    margin-left : 20px;
+
+    border-left: solid 1.2px rgb(233, 226, 226);
+    border-right: solid 1.2px rgb(233, 226, 226);
 }
 
 #community_modal .detail_comment {
     width : 370px;
     height : 570px;
-    background-color: aqua;
+    overflow-y: scroll;
+}
+
+#community_modal .detial_comment2 {
+    width : 340px;
+    height : 130px;
+    display: flex;
 }
 
 #community_modal .detail_commentwrite {
     width : 370px;
     height : 130px;
-    background-color: orange;
+    /* background-color: orange; */
+    border-top: solid 1.2px rgb(233, 226, 226);
+}
+
+#community_modal .detail_like {
+    width : 140px;
+    height : 30px;
+    /* background-color: red; */
+    font-size: 20px;
+
+    color: rgb(245, 115, 115);
+    border : solid 2px rgb(245, 115, 115);
+    text-align: center;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#community_modal .commentWrite {
+    width : 250px;
+    height : 70px;
+    margin-left: 10px;
+    margin-top : 18px;
+    border-radius: 5px;
+    border : 1.2px solid rgb(216, 216, 216);
+
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+#community_modal .commentButton {
+    margin-left: 10px;
+    width : 80px;
+    height : 72px;
+
+    font-size: 18px;
+    background-color: black;
+    color : white;
+    font-weight: 600;
+
+    border : none;
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+#community_modal .commentContent {
+    width : 290px;
+    min-height : 100px;
+    max-height : 300px;
+    /* background-color: red; */
+    margin : 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 0;
+
+    border : 1.2px solid rgb(214, 214, 214);    
+}
+
+#community_modal .commentProfile {
+    width : 300px;
+    height : 35px;
+    /* background-color: orange; */
+    border-radius: 10px 10px 0 0 ;
+    display: flex;
+
+    /* background-color: red; */
+}
+
+#community_modal .content_comment {
+    width : 280px;
+    min-height : 25px;
+    max-height: 190px;
+    /* background-color: blue; */
+    border-radius: 0px 0px 20px 0;
+
+    padding: 5px 5px;
+}
+#community_modal .picture_comment {
+    width : 60px;
+    height : 55px;
+}
+#community_modal .writer_comment {
+    width : 60px;
+    height : 40px;
+    line-height: 40px;
+    padding-left : 6px;
+    font-size: 17px;
+}
+#community_modal .write_date {
+    width : 130px;
+    height : 40px;
+
+    text-align: left;
+    line-height: 40px;
+
+    font-size: 13px;
+    color : gray;
+}
+
+#community_modal .profile_image_comment {
+    width : 40px;
+    height : 40px;
+    border-radius: 50%;
+    border: 1.2px solid rgb(185, 184, 184);
+    cursor: pointer;
+    margin-left : 10px;
+    margin-top : 7px;
 }

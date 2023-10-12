@@ -20,7 +20,7 @@ const Comunity = (Props) => {
             }
         })
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 setCommunity(res.data);
             })
             .catch(err => {
@@ -31,11 +31,15 @@ const Comunity = (Props) => {
     const showModal = (e) => {
         SetShow(true);
         SetCommunityId(e.target.getAttribute("value"));
-    }
+    };
 
    const noshow = (e) => {
     SetShow(false);
-   }
+   };
+
+   const openProfile = () => {
+    // 모달로 띄울 예쩡
+   };
 
 
     return (
@@ -52,7 +56,7 @@ const Comunity = (Props) => {
                                 <div className="community_sub" id="commjnity_sub">
                                     <div className="community_profile">
                                         <div className="profile_main">
-                                            <img className="profile_image" src={`http://localhost:8080/member/view/${com.member.filename}`} alt=""></img>
+                                            <img className="profile_image" src={`http://localhost:8080/member/view/${com.member.filename}`} alt="" onClick={openProfile}></img>
                                             <span className="profile_name">{com.member.nickname}</span>
                                         </div>
                                     </div>
