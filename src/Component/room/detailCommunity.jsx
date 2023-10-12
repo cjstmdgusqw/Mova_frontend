@@ -5,6 +5,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { AiFillLike } from 'react-icons/ai';
 
 const DetailCommunity = ({show, noshow, communityid}) => {
     const defaultDetailFeed = {
@@ -77,8 +78,12 @@ const DetailCommunity = ({show, noshow, communityid}) => {
                             ))}
                         </Slider>
                     </div>
-                    <div className='detail_button'></div>
-                    <div className='detail_content'></div>
+                    <div className='detail_content'>
+                        {detailfeed.content}
+                    </div>
+                    <div className='detail_button'>
+                    <AiFillLike />
+                    </div>
                 </div>
                 <div className='detail_total2'>
                     <div className='detail_comment'></div>
@@ -90,5 +95,7 @@ const DetailCommunity = ({show, noshow, communityid}) => {
         </div>  
     )
 }
+
+
 
 export default DetailCommunity;

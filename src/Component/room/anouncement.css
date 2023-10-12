@@ -84,14 +84,14 @@
 }
 
 #anouncement .prebutton {
-    width : 40px;
-    height : 40px;
+    width : 35px;
+    height : 35px;
     border: 1px solid black;
     border-radius: 50%;
 
     text-align: center;
-    line-height: 35px;
-    font-size: 30px;
+    line-height: 31px;
+    font-size: 25px;
     cursor: pointer;
 
     margin-left: 20px;
@@ -106,9 +106,61 @@
     display: none;
 }
 
+/* 상세페이지 */
 #detailannoun .detail{
     width : 650px;
-    height: 800px;
-    margin : 20px auto;
-    border: 1px solid black;
+    height: 400px;
+    margin :50px auto;
+    border: 1px solid rgb(207, 205, 205);
+    border-radius: 20px;
+}
+
+#detailannoun .detail_title {
+    width : 637px;
+    height : 50px;
+    border-top: 1px solid rgb(207, 205, 205);
+    border-bottom: 1px solid rgb(207, 205, 205);
+    margin : 10px auto;
+    line-height: 50px;
+
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: 13px;
+}
+
+#detailannoun .detail_content {
+    width : 640px;
+    height : 200px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+
+    overflow-x: auto;
+    white-space: pre-wrap;
+
+    border-bottom: 1px solid rgb(207, 205, 205);
+}
+
+#detailannoun .detail_bottom {
+    width : 650px;
+    height: 50px;
+    /* background-color: red; */
+
+    display: flex;
+}
+
+#detailannoun .detail_writer {
+    width : 200px;
+    height : 30px;
+    /* background-color: orange; */
+    padding-left: 10px;
+}
+
+#detailannoun .detail_date {
+    width : 450px;
+    height : 30px;
+    /* background-color: green; */
+    text-align: right;
+    padding-right: 15px;
 }

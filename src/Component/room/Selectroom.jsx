@@ -48,7 +48,7 @@ const Selectroom = () => {
                         onClick={Change}>공부 기록방</div>
                     </div>  
                     <div className="menu3">
-                        <a>온라인바로가기</a>
+                        <a href="http://www.naver.com">온라인바로가기</a>
                     </div>  
                     {
                         memberId == topmember &&
