@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
 import { useParams } from 'react-router';
+import Profilemodal from './profilemodal';
 
 const DetailCommunity = ({ show, noshow, communityid }) => {
   const memberid = localStorage.getItem("id");
@@ -30,6 +31,8 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
 
   const [like, setLike] = useState(false);
 
+  const [show2, setShow2] = useState(false);
+
   const closeModal = () => {
     noshow();
   };
@@ -49,22 +52,11 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
     .catch(err => {
       console.log(err);
     });
-
-    axios.get("http://localhost:8080/community/checklike", {
-      params : {
-        communityId : communityid,
-        memberId : memberId
-      }
-    })
-    .then(res=>{
-      if(res.data === 1) {
-        setLike(true);
-      }
-    })
-    .catch(err=>{
-      console.log(err);
-    })
   }, [memberid, communityid]);
+
+  const check = () => {
+
+  }
 
   // 주기적으로 댓글 업데이트를 요청하는 함수
   const fetchCommentUpdates = () => {
@@ -95,6 +87,23 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       });
       fetchCommentUpdates();
     }
+
+    axios.get("http://localhost:8080/community/checklike", {
+      params : {
+        communityId : communityid,
+        memberId : memberId
+      }
+    })
+    .then(res=>{
+      if(res.data === 1) {
+        setLike(true);
+      }else{
+        setLike(false);
+      }
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   }, [show, communityid]);
 
   const settings = {
@@ -169,6 +178,15 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
     };
   };
 
+  const openModal = (e) => {
+    setShow2(true);
+    console.log(e.target.getAttribute("value"));
+  }
+
+  const noprofileShow = () => {
+    setShow2(false);
+  }
+
   return (
     <div id="community_modal" className={`community_modal ${show ? 'show' : ''}`} onClick={closeModal}>
       <div className="detail_modal" onClick={Stopmodal}>
@@ -220,7 +238,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
               commentData.map((comment, index) => (
                 <div className='detial_comment2' key={index}>
                   <div>
-                    <img className="profile_image_comment" src={`http://localhost:8080/member/view/${comment.filename}`} alt=""></img>
+                    <img className="profile_image_comment" src={`http://localhost:8080/member/view/${comment.filename}`} alt="" onClick={openModal} value={comment.memberid}></img>
                   </div>
                   <div className='commentContent'>
                     <div className='commentProfile'>
@@ -228,7 +246,9 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
                     </div>
                     <div className='content_comment'>{comment.comment}</div>
                   </div>
+                  <Profilemodal show={show2} noshow={noprofileShow} memberid2={comment.memberid}/>
                 </div>
+                
               ))
             }
           </div>
@@ -238,6 +258,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
           </div>
         </div>
       </div>
+      
     </div>
   )
 }
