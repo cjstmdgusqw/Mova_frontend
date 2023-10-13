@@ -86,6 +86,14 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
         // console.log(err);
       });
       fetchCommentUpdates();
+
+      const intervalId = setInterval(() => {
+        fetchCommentUpdates();
+      }, 500);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
     }
 
     axios.get("http://localhost:8080/community/checklike", {
@@ -169,13 +177,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
         });
     }
     
-    const intervalId = setInterval(() => {
-      fetchCommentUpdates();
-    }, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
+  
   };
 
   const openModal = (e) => {
