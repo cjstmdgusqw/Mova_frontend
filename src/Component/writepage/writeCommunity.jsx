@@ -26,12 +26,11 @@ const WriteCommunity = () => {
         })
         .then(res=>{
             setMemberId(res.data);
-            window.location.replace(`http://localhost:3000/room/${roomid}`)
         })
         .catch(err=>{
             console.log(err)
         })
-    });
+    },[]);
 
 
     const selectimg = (e) => {
@@ -91,6 +90,7 @@ const WriteCommunity = () => {
             })
             .then(res=>{
                 console.log(res.data);
+                window.location.replace(`http://localhost:3000/room/${roomid}`)
             })
             .catch(err=>{
                 console.log(err);

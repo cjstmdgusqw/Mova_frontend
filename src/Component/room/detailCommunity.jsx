@@ -5,7 +5,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FcLike } from 'react-icons/fc';
+import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
 import { useParams } from 'react-router';
 
 const DetailCommunity = ({ show, noshow, communityid }) => {
@@ -15,16 +15,20 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
     community_id: 0,
     content: '',
     filename: '',
+    like_count : 0,
     member: {
       filename: '',
       nickname: '',
     },
     title: ''
   };
+
   const [detailfeed, SetDetailFeed] = useState(defaultDetailFeed);
   const [comment, setComment] = useState("");
   const [memberId, setMemberId] = useState();
   const [commentData, setCommentData] = useState([]);
+
+  const [like, setLike] = useState(false);
 
   const closeModal = () => {
     noshow();
@@ -32,6 +36,35 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
   const Stopmodal = (e) => {
     e.stopPropagation();
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/member/selectmemberID", {
+      params: {
+        id: memberid
+      }
+    })
+    .then(res => {
+      setMemberId(res.data);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+    axios.get("http://localhost:8080/community/checklike", {
+      params : {
+        communityId : communityid,
+        memberId : memberId
+      }
+    })
+    .then(res=>{
+      if(res.data === 1) {
+        setLike(true);
+      }
+    })
+    .catch(err=>{
+      console.log(err);
+    })
+  }, [memberid, communityid]);
 
   // 주기적으로 댓글 업데이트를 요청하는 함수
   const fetchCommentUpdates = () => {
@@ -47,21 +80,6 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       console.log(err);
     });
   };
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/member/selectmemberID", {
-      params: {
-        id: memberid
-      }
-    })
-    .then(res => {
-      setMemberId(res.data);
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }, [memberid]);
-
   useEffect(() => {
     if (show === true) {
       axios.get("http://localhost:8080/community/detailfeed", {
@@ -75,20 +93,8 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       .catch(err => {
         // console.log(err);
       });
-    }
-
-    // 초기 데이터 가져오기
-    fetchCommentUpdates();
-
-    // 일정한 간격(예: 5초)으로 업데이트를 확인
-    const intervalId = setInterval(() => {
       fetchCommentUpdates();
-    }, 5000);
-
-    return () => {
-      // 컴포넌트 언마운트 시에 clearInterval을 호출하여 간격 업데이트를 중지
-      clearInterval(intervalId);
-    };
+    }
   }, [show, communityid]);
 
   const settings = {
@@ -101,7 +107,34 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
   };
 
   const goodSticker = () => {
-    // 좋아요 기능 구현
+    setLike(!like);
+    if(like === false){
+      axios.get("http://localhost:8080/community/increaselike", {
+        params : {
+          communityId : communityid,
+          memberId : memberId
+        }
+      })
+      .then(res=>{
+        console.log(res.data);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    }else if(like === true){
+      axios.get("http://localhost:8080/community/decreaselike", {
+        params : {
+          communityId : communityid,
+          memberId : memberId
+        }
+      })
+      .then(res=>{
+        console.log(res.data);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    }
   };
 
   const writeComment = (e) => {
@@ -126,6 +159,14 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
           console.log(err);
         });
     }
+    
+    const intervalId = setInterval(() => {
+      fetchCommentUpdates();
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
   };
 
   return (
@@ -154,9 +195,20 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
             </Slider>
           </div>
           <div className='detail_button'>
-            <div className='detail_like' onClick={goodSticker}>
-              <FcLike className='like' /> 칭찬해요
-            </div>
+            {
+              like === false && 
+                <div className='detail_like_before' onClick={goodSticker}>
+                  <FcLikePlaceholder className='like' /> 칭찬해요
+                </div>
+            }
+            {
+              like === true &&
+              <div className='detail_like' onClick={goodSticker}>
+                <FcLike className='like' /> 칭찬해요
+              </div>
+            }
+
+           
           </div>
           <div className='detail_content'>
             {detailfeed.content}

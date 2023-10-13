@@ -2,15 +2,17 @@ import axios from "axios";
 import './community.css'
 import { useEffect, useState } from "react";
 import DetailCommunity from "./detailCommunity";
+import Profilemodal from "./profilemodal";
 
 const Comunity = (Props) => {
     const [show, SetShow] = useState(false);
+    const [profileShow, SetProfileShow] = useState(false);
     const [community, setCommunity] = useState([]);
     const [communityId, SetCommunityId] = useState();
-
+    const [memberid, setmemberId] = useState();
 
     const movePage = () => {
-        window.location.replace(`http://localhost:3000/room/writecommunity/${Props.roomid}`)
+        window.location.replace(`http://localhost:3000/room/writecommunity/${Props.roomid}`);
     }
 
     useEffect(() => {
@@ -34,13 +36,17 @@ const Comunity = (Props) => {
     };
 
    const noshow = (e) => {
-    SetShow(false);
+        SetShow(false);
    };
 
-   const openProfile = () => {
-    // 모달로 띄울 예쩡
+   const openProfile = (e) => {
+        SetProfileShow(true);
+        setmemberId(e.target.getAttribute("value"));  
    };
 
+   const noprofileShow = () => {
+    SetProfileShow(false);
+   }
 
     return (
         <div id="community">
@@ -56,11 +62,11 @@ const Comunity = (Props) => {
                                 <div className="community_sub" id="commjnity_sub">
                                     <div className="community_profile">
                                         <div className="profile_main">
-                                            <img className="profile_image" src={`http://localhost:8080/member/view/${com.member.filename}`} alt="" onClick={openProfile}></img>
+                                            <img className="profile_image" src={`http://localhost:8080/member/view/${com.member.filename}`} alt="" onClick={openProfile} value={com.member.memberId}></img>
                                             <span className="profile_name">{com.member.nickname}</span>
                                         </div>
                                     </div>
-                                    <div className="community_content" onClick={showModal} value={com.community_id}>{com.content}</div>
+                                    <div className="community_content" onClick={showModal} value={com.community_id}>{com.title}</div>
                                     <div className="community_count">
 
                                     </div>
@@ -73,6 +79,7 @@ const Comunity = (Props) => {
                     })
                 }
                     <DetailCommunity show={show} noshow={noshow} communityid={communityId}/>
+                    <Profilemodal show={profileShow} noshow={noprofileShow} memberid2={memberid}/>
 
             </div>
         </div>

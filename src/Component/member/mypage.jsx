@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Sub1 from "./mypage/sub1";
 import Sub2 from "./mypage/sub2";
+import Sub3 from "./mypage/sub3";
 
 const Mypage = () => {
 
@@ -46,7 +47,7 @@ const Mypage = () => {
                             <Sub2 id={memberId}/>
                         </div>
                         <div className="mypageSubpage3">
-
+                            <Sub3 id={memberId}/>
                         </div>
                     </div>
                 </div>

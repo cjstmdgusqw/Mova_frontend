@@ -1,0 +1,70 @@
+.Profilemodal { 
+    width : 100%;
+    height : 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top : 0;
+    left : 0;
+
+    display: none;
+}
+
+#profilemodal .profile{
+    width : 370px;
+    height : 550px;
+    background-color: white;
+
+    margin : 200px auto;
+    border-radius: 20px;
+}
+
+#profilemodal .profile_picture{
+    width : 150px;
+    height : 150px;
+    border : 1.5px solid black;
+    border-radius: 50%;
+    margin-left : 115px;
+    margin-top : 50px;
+}
+
+#profilemodal .profile_name {
+    width : 370px;
+    height : 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#profilemodal .profile_nickname {
+    width : 370px;
+    height : 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+#profilemodal .profile_button {
+    width : 370px;
+    height : 70px;
+    margin-top: 10px;
+}
+
+#profilemodal .button {
+    width : 280px;
+    height : 40px;
+    background-color: white;
+    color : black;
+
+    margin-left : 50px;
+    margin-top : 30px;
+    font-size: 15px;
+
+    border : 1.7px solid black;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+#profilemodal .show {
+    display: block;
+}
