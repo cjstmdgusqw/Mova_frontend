@@ -26,7 +26,7 @@ const Comunity = (Props) => {
                 setCommunity(res.data);
             })
             .catch(err => {
-                console.log(err);
+                // console.log(err);
             })
     }, []);
 

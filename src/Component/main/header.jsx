@@ -16,7 +16,7 @@ const Header = () => {
             SetMemberid(res.data);
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
         })
 
     const logout = () => {

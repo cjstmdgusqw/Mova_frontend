@@ -18,7 +18,7 @@ const WriteAnouncement = () => {
             window.location.replace(`http://localhost:3000/room/${params.id}`)
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
         })
     }
     return (

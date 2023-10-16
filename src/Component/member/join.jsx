@@ -36,7 +36,7 @@ const Join = () => {
       formData.append('Id', member.Id);
       formData.append('password', member.password); 
       formData.append('nickname', member.nickname);
-      formData.append("filename", member.filename)
+      formData.append("filename", member.filename);
       formData.append('file', file);
       axios.post("http://localhost:8080/member/signup", formData)
       .then(res=>{
@@ -45,7 +45,7 @@ const Join = () => {
           window.location.replace("/login");
       })
       .catch(err=>{
-          console.log(err);
+          // console.log(err);
       })
     }
   };

@@ -16,7 +16,7 @@ const Login = () => {
         })
         .catch(err=>{
             alert("회원 정보가 올바르지 않습니다")
-            console.log(err);
+            // console.log(err);
         })
     }
 

@@ -17,7 +17,7 @@ const SelectNotice = () => {
                 setNotice(res.data);
             })
             .catch(err => {
-                console.log(err);
+                // console.log(err);
             })
 
         axios.get(`http://localhost:8080/member/selectmemberID/`,{
@@ -30,7 +30,7 @@ const SelectNotice = () => {
             setMemberid(res.data);
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
         })
     }, [roomId.id, memberId]);
 
@@ -45,7 +45,7 @@ const SelectNotice = () => {
         .catch(err=>{
             alert("로그인이 필요한 서비스입니다");
             window.location.replace("/login");
-            console.log(err)
+            // console.log(err)
         })
     }
 

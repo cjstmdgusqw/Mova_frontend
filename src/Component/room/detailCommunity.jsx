@@ -50,7 +50,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       setMemberId(res.data);
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
     });
   }, [memberid, communityid]);
 
@@ -69,9 +69,10 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       setCommentData(res.data);
     })
     .catch(err => {
-      console.log(err);
+      // console.log(err);
     });
   };
+
   useEffect(() => {
     if (show === true) {
       axios.get("http://localhost:8080/community/detailfeed", {
@@ -85,15 +86,6 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       .catch(err => {
         // console.log(err);
       });
-      fetchCommentUpdates();
-
-      const intervalId = setInterval(() => {
-        fetchCommentUpdates();
-      }, 500);
-  
-      return () => {
-        clearInterval(intervalId);
-      };
     }
 
     axios.get("http://localhost:8080/community/checklike", {
@@ -110,9 +102,21 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
       }
     })
     .catch(err=>{
-      console.log(err);
+      // console.log(err);
     })
-  }, [show, communityid]);
+
+    fetchCommentUpdates();
+
+    const intervalId = setInterval(() => {
+      fetchCommentUpdates();
+    }, 500);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+
+    
+  }, [show, communityid, memberId]);
 
   const settings = {
     dots: false,
@@ -136,7 +140,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
         console.log(res.data);
       })
       .catch(err=>{
-        console.log(err);
+        // console.log(err);
       })
     }else if(like === true){
       axios.get("http://localhost:8080/community/decreaselike", {
@@ -149,9 +153,11 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
         console.log(res.data);
       })
       .catch(err=>{
-        console.log(err);
+        // console.log(err);
       })
     }
+
+    
   };
 
   const writeComment = (e) => {
@@ -173,7 +179,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
           setComment("");
         })
         .catch(err => {
-          console.log(err);
+          // console.log(err);
         });
     }
     

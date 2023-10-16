@@ -21,7 +21,7 @@ const Makeroom = () => {
             setMemberId(res.data);
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
         })
     },[Id]);
 
@@ -53,7 +53,7 @@ const Makeroom = () => {
                 window.location.replace("/");
             })
             .catch(err => {
-                console.log(err);
+                // console.log(err);
             });
         }
     }

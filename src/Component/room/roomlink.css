@@ -1,0 +1,40 @@
+.link_room {
+    width : 910px;
+    height : 200px;
+    margin : 40px auto;
+    text-align: center;
+}
+
+#link_room .subtitle {
+    width :200px;
+    height : 70px;
+    font-size: 20px;
+    margin : 0 auto;
+    line-height: 70px;
+
+    font-weight: 600;
+}
+
+#link_room .link {
+    margin-top: 30px;
+    width : 500px;
+    height : 30px;
+
+    border-radius: 10px;
+    margin-right: 20px;
+    padding-left: 10px;
+}
+
+#link_room .button {
+    width : 50px;
+    height : 32px;
+
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+
+    font-size: 15px;
+}
+#link_room .button:hover {
+    font-weight: 600;
+}

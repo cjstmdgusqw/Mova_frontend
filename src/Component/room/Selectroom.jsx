@@ -5,6 +5,7 @@ import './room.css';
 import Comunity from "./comunity";
 import Anouncement from "./anouncement";
 import Memberlist from "./memberlist";
+import Roomlink from "./roomlink";
 
 
 const Selectroom = () => {
@@ -12,15 +13,17 @@ const Selectroom = () => {
     let [component, setComponent] = useState("공지사항");
     const memberId = localStorage.getItem("id");
     const [topmember, setTopmember] = useState();
+    const [link, setLink]=useState("");
 
     useEffect(()=>{
         axios.get(`http://localhost:8080/room/selectroom/${params.id}`)
         .then(res=>{
-            // console.log(res.data);
+            console.log(res.data);
             setTopmember(res.data.member.id);
+            setLink(res.data.link);
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
         });
     },[params.id])
 
@@ -47,9 +50,23 @@ const Selectroom = () => {
                         value = "공부 기록방"
                         onClick={Change}>공부 기록방</div>
                     </div>  
-                    <div className="menu3">
-                        <a href="http://www.naver.com">온라인바로가기</a>
-                    </div>  
+
+                    {
+                        memberId === topmember && 
+                        <div className="menu3">
+                            <div 
+                            value = "방 등록"
+                            onClick={Change}>온라인 링크 등록</div> 
+                         </div>
+                    }
+               
+                    {
+                        memberId != topmember && 
+                        <div className="menu3">
+                            <a href={`${link}`}>온라인바로가기</a>
+                        </div> 
+                    }
+                   
                     {
                         memberId == topmember &&
                         <div className="menu4">
@@ -77,6 +94,12 @@ const Selectroom = () => {
                         component === "멤버리스트" && memberId == topmember &&
                         (
                             <Memberlist/>
+                        )
+                    }
+                    {
+                        component === "방 등록" && memberId == topmember &&
+                        (
+                            <Roomlink/>
                         )
                     }
                 </div>

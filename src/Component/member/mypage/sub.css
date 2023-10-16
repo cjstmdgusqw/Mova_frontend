@@ -113,9 +113,51 @@
     color : white;
 }
 
-#sub3 .box {
+#sub3 .roomlist3 {
     width : 400px;
     height : 285px;
     margin : 0 auto;
     border : 1.2px solid rgb(196, 192, 192);
+}
+
+#sub3 .boxtitle3 {
+    width : 360px;
+    height : 40px;
+    /* background-color: black; */
+    margin : 5px auto 0 auto;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#sub3 .room{
+    width : 350px;
+    height : 50px;
+    border-radius: 25px;
+    /* background-color: red; */
+    margin : 20px auto;
+    border: 1.5px solid rgb(187, 184, 184);
+
+    display: flex;
+    line-height: 50px;
+    padding-left: 20px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#sub3 .title {
+    width : 400px;
+    height : 65px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sub3 .room:hover {
+    background-color: black;
+    color : white;
 }

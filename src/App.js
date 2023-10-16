@@ -10,6 +10,8 @@ import SelectNotice from './Component/notice/selectnotice';
 import WriteAnouncement from './Component/writepage/writeAnouncement';
 import Mypage from './Component/member/mypage';
 import WriteCommunity from './Component/writepage/writeCommunity';
+import Resume from './Component/member/resume';
+import ModifyResume from './Component/member/modifyresume';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Main/>}/>
         <Route exact path='/join' element={<Join/>}/>
+        <Route exact path='/writeResume' element={<Resume/>}/>
+        <Route exact path='/modifyResume/:id' element={<ModifyResume/>}/>
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/makeroom/' element={<Makeroom/>}/>
         <Route exact path='/mypage/:id/' element={<Mypage/>}/>

@@ -73,5 +73,18 @@
 }
 
 #memberlist .nickname {
-    font-weight: 600;
+    font-weight:500;
+
+    cursor:pointer;
+}
+
+#memberlist .nickname:hover {
+
+    text-decoration: underline;
+    font-style: unset;
+}
+
+#memberlist .subname {
+    font-size: 14px;
+    color : gray;
 }

@@ -172,4 +172,214 @@
     line-height: 40px;
 }
 
+/* 이력서 */
+#resume {
+    width : 100%;
+    height : 1100px;
+}
 
+#resume .writeResume {
+    width : 800px;
+    height : 800px;
+    border-radius: 10px;
+    border : 2px solid black;
+    text-align: center;
+    margin : 30px auto;
+}
+
+#resume .title{
+    font-size: 30px;
+}
+
+#resume select{
+    width: 350px;
+    height: 50px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#resume input{
+    width: 337px;
+    height: 46px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#resume .button{
+    width : 380px;
+    height: 45px;
+    font-size: 15px;
+    background-color: black;
+    color : white;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 10px;
+    border : none;
+    margin-top : 40px;
+}
+
+#resume .roomgrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+#resume .smallTitle {
+    width: 350px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+}
+
+#resume .smallTitle2  {
+    width: 750px;
+    height: 28px;
+    font-size: 20px;
+    margin:0 auto;
+    justify-self: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#resume textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+  
+#resume textarea {
+    padding: 10px;
+    width : 730px;
+    height : 260px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    resize: none;
+}
+
+#resume .contentTitle{
+    width: 735px;
+    height: 46px;
+    font-size: 15px;
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#resume .detailResume {
+    display: flex;
+}
+
+#resume .subname {
+    font-size: 15px;
+    color : gray
+}
+
+#detailresume {
+    width : 100%;
+    height : 1100px;
+}
+
+#detailresume .writeResume {
+    width : 800px;
+    height : 800px;
+    border-radius: 10px;
+    border : 2px solid black;
+    text-align: center;
+    margin : 30px auto;
+}
+
+#detailresume .title2{
+    font-size: 30px;
+}
+
+#detailresume .total1 {
+    width : 800px;
+    height : 220px;
+    /* background-color: red; */
+    display: flex;
+}
+
+#detailresume .profileimg {
+    width : 250px;
+    height : 220px;
+    /* background-color: blue; */
+}
+
+#detailresume .name {
+    width : 550px;
+    height : 50px;
+    /* background-color: aqua; */
+
+    line-height: 50px;
+    font-size : 20px;
+}
+#detailresume .age {
+    width : 550px;
+    height : 50px;
+    /* background-color: yellow; */
+    line-height: 50px;
+    font-size : 20px;
+}
+#detailresume .phonenumber {
+    width : 550px;
+    height : 50px;
+    /* background-color: green; */
+    line-height: 50px;
+    font-size : 20px;
+}
+
+#detailresume .profile {
+    width : 200px;
+    height : 200px;
+    margin-top : 10px;
+    border: 1.2px solid black;
+}
+
+#detailresume .total2 {
+    width : 800px;
+    height : 420px;
+    /* background-color: red; */
+
+    margin-top : 15px;
+}
+
+#detailresume .title {
+    width : 750px;
+    height : 60px;
+    /* background-color: blue; */
+    display: inline-block;
+    margin : 20px auto;
+
+    font-size: 20px;
+    line-height: 60px;
+
+    font-weight: 500;
+    border-bottom: 1.2px solid rgb(199, 195, 195);
+}
+
+#detailresume .content {
+    width : 750px;
+    height : 300px;
+    margin : 0 auto;
+
+    border : 1.2px solid  rgb(199, 195, 195);
+}
+
+#detailresume .content1 {
+    width : 730px;
+    height : 35px;
+    /* background-color: blue; */
+
+    font-size: 20px;
+    padding: 10px 10px;
+}
+
+#detailresume .content2 {
+    padding: 10px 10px;
+}

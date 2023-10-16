@@ -28,7 +28,7 @@ const WriteCommunity = () => {
             setMemberId(res.data);
         })
         .catch(err=>{
-            console.log(err)
+            // console.log(err)
         })
     },[]);
 
@@ -93,7 +93,7 @@ const WriteCommunity = () => {
                 window.location.replace(`http://localhost:3000/room/${roomid}`)
             })
             .catch(err=>{
-                console.log(err);
+                // console.log(err);
             })
         }
     }

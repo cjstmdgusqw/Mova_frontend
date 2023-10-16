@@ -31,6 +31,10 @@ const Profilemodal = ({show, noshow, memberid2}) => {
                 // console.log(err);
             })
     }, [show, memberid]);
+
+    const movepage = () => {
+        
+    }
     return (
         <div className={`Profilemodal ${show ? 'show' : ''}`} id='profilemodal' onClick={closeModal}>
             <div className='profile' onClick={Stopmodal}>
@@ -38,7 +42,7 @@ const Profilemodal = ({show, noshow, memberid2}) => {
                 <div className='profile_name'>이름 : {member.name}</div>
                 <div className='profile_nickname'>닉네임 : {member.nickname}</div>
                 <div className='profile_button'>
-                    <input className='button' type='button' value="이력서 보기"></input>
+                    <input className='button' type='button' value="이력서 보기" onClick={movepage}></input>
                 </div>
             </div>
         </div>

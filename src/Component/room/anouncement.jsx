@@ -37,7 +37,7 @@ const Anouncement = (Props) => {
             setAnnouncement([...announcement, ...res.data]);
         })
         .catch(err=>{
-            console.log(err);
+            // console.log(err);
         })
     },[Props.roomid])
 
