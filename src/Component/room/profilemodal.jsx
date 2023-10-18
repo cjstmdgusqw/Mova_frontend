@@ -32,8 +32,9 @@ const Profilemodal = ({show, noshow, memberid2}) => {
             })
     }, [show, memberid]);
 
-    const movepage = () => {
-        
+    const movepage = (e) => {
+        const id = e.target.getAttribute("data");
+        window.location.replace(`http://localhost:3000/modifyResume/${id}`)
     }
     return (
         <div className={`Profilemodal ${show ? 'show' : ''}`} id='profilemodal' onClick={closeModal}>
@@ -42,7 +43,7 @@ const Profilemodal = ({show, noshow, memberid2}) => {
                 <div className='profile_name'>이름 : {member.name}</div>
                 <div className='profile_nickname'>닉네임 : {member.nickname}</div>
                 <div className='profile_button'>
-                    <input className='button' type='button' value="이력서 보기" onClick={movepage}></input>
+                    <input className='button' type='button' value="이력서 보기" data={member.memberId} onClick={movepage}></input>
                 </div>
             </div>
         </div>

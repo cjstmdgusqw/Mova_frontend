@@ -6,13 +6,14 @@ const Roomlink = () => {
     const [linkValue, setLinkValue] = useState('');
     const roomid = useParams().id;
     const Apply = () => {
-        console.log(typeof(linkValue));
         const formData = new FormData();
         formData.append('link', linkValue);
         formData.append('roomid', roomid)
         axios.post("http://localhost:8080/room/applylink/", formData)
         .then(res=>{
             console.log(res.data);
+            alert("등록이 완료되었습니다");
+            window.location.replace(`http://localhost:3000/room/${roomid}`)
         })
         .catch(err=>{
             console.log(err);

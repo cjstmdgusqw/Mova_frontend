@@ -54,10 +54,6 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
     });
   }, [memberid, communityid]);
 
-  const check = () => {
-
-  }
-
   // 주기적으로 댓글 업데이트를 요청하는 함수
   const fetchCommentUpdates = () => {
     axios.get("http://localhost:8080/community/selectcomment", {
@@ -109,7 +105,7 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
 
     const intervalId = setInterval(() => {
       fetchCommentUpdates();
-    }, 500);
+    }, 2000);
 
     return () => {
       clearInterval(intervalId);
@@ -182,13 +178,11 @@ const DetailCommunity = ({ show, noshow, communityid }) => {
           // console.log(err);
         });
     }
-    
-  
   };
 
   const openModal = (e) => {
     setShow2(true);
-    console.log(e.target.getAttribute("value"));
+    // console.log(e.target.getAttribute("value"));
   }
 
   const noprofileShow = () => {

@@ -14,7 +14,7 @@ const Memberlist = () => {
 
     console.log(teamMember);
 
-    useEffect(()=>{
+    const selectMember = () => {
         axios.get("http://localhost:8080/member/selectMember", {
             params : {
                 state : 1,
@@ -28,9 +28,11 @@ const Memberlist = () => {
         .catch(err=>{
             // console.log(err);
         })
-    },[params.id]);
-    
-    useEffect(()=>{
+    }
+
+ 
+
+    const selectapplymember = () => {
         axios.get("http://localhost:8080/member/selectApplyMember", {
             params : {
                 state : 0,
@@ -43,8 +45,22 @@ const Memberlist = () => {
         })    
         .catch(err=>{
             // console.log(err);
-        })
-    },[params.id]);
+        })    
+    }
+
+    useEffect(() => {
+        selectMember();
+        selectapplymember();
+    }, [params.id]);
+
+    // useEffect(() => {
+    //     const intervalid = setInterval(()=> {
+    //         selectapplymember();
+    //     }, 2000)
+
+    //     return () => clearInterval(intervalid);
+    // },[params.id])
+    
   
 
     const handleCorrectButton = (e) => {
@@ -57,6 +73,8 @@ const Memberlist = () => {
         })
         .then(res=>{
             console.log(res.data);
+            selectMember();
+            selectapplymember();
             setShow(true);
         })
         .catch(err=>{
@@ -73,6 +91,7 @@ const Memberlist = () => {
         })
         .then(res=>{
             console.log(res.data);
+            selectapplymember();
             setShow(true);
         })
         .catch(err=>{

@@ -14,6 +14,7 @@ const Resume = () => {
         axios.post("http://localhost:8080/resume/writeResume", formData)
         .then(res=>{
             console.log(res.data);
+            window.location.replace("http://localhost:3000/");
         })
         .catch(err=>{
             console.log(err);

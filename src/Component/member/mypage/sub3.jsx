@@ -12,7 +12,6 @@ const Sub3 = () => {
             }
         })
         .then(res=>{
-            console.log(res.data);
             SetResumelist(res.data);
         })
         .catch(err=>{

@@ -13,9 +13,7 @@ const Anouncement = (Props) => {
 
     const roomid = useParams().id;
 
-    const toggleShow = () => {
-        setShow(!show);
-    }
+    
 
     const movePage = () => {
         window.location.replace(`http://localhost:3000/room/writeanouncement/${Props.roomid}`)
@@ -26,7 +24,7 @@ const Anouncement = (Props) => {
         setShow(!show);
     }   
 
-    useEffect(() => {
+    const selectannouncement = () => {
         axios.get("http://localhost:8080/announcement/selectannouncement", {
             params:{
                 id : Props.roomid
@@ -39,7 +37,18 @@ const Anouncement = (Props) => {
         .catch(err=>{
             // console.log(err);
         })
+    }
+
+    useEffect(() => {
+        selectannouncement();
     },[Props.roomid])
+
+    const toggleShow = () => {
+        window.location.reload();
+        setShow(!show);
+    }
+
+   
 
     return (
         <div id='anouncement'>

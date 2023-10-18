@@ -3,32 +3,37 @@ import './community.css'
 import { useEffect, useState } from "react";
 import DetailCommunity from "./detailCommunity";
 import Profilemodal from "./profilemodal";
-
+import { FcLike } from 'react-icons/fc';
 const Comunity = (Props) => {
     const [show, SetShow] = useState(false);
     const [profileShow, SetProfileShow] = useState(false);
     const [community, setCommunity] = useState([]);
     const [communityId, SetCommunityId] = useState();
     const [memberid, setmemberId] = useState();
+    
 
     const movePage = () => {
         window.location.replace(`http://localhost:3000/room/writecommunity/${Props.roomid}`);
     }
 
-    useEffect(() => {
+    const selectfeed = () => {
         axios.get('http://localhost:8080/community/selectfeed', {
             params: {
                 roomid: Props.roomid
             }
         })
-            .then(res => {
-                // console.log(res.data);
-                setCommunity(res.data);
-            })
-            .catch(err => {
-                // console.log(err);
-            })
-    }, []);
+        .then(res => {
+            console.log(res.data);
+            setCommunity(res.data);
+        })
+        .catch(err => {
+            // console.log(err); 
+        })
+}
+
+    useEffect(() => {
+        selectfeed();
+    }, [Props.roomid]);
 
     const showModal = (e) => {
         SetShow(true);
@@ -37,6 +42,7 @@ const Comunity = (Props) => {
 
    const noshow = (e) => {
         SetShow(false);
+        selectfeed();
    };
 
    const openProfile = (e) => {
@@ -46,6 +52,7 @@ const Comunity = (Props) => {
 
    const noprofileShow = () => {
     SetProfileShow(false);
+    selectfeed();
    }
 
     return (
@@ -68,7 +75,19 @@ const Comunity = (Props) => {
                                     </div>
                                     <div className="community_content" onClick={showModal} value={com.community_id}>{com.title}</div>
                                     <div className="community_count">
-
+                                        {
+                                            com.like_count === 0  && (
+                                                <>칭찬이 필요합니다!</>
+                                            )
+                                        }
+                                        {
+                                            com.like_count !==0 && (
+                                                <>
+                                                 칭찬 스티커<FcLike/>를 {com.like_count}개 받았습니다!  
+                                                </>
+                                            )
+                                        }
+                                       
                                     </div>
                                 </div>
                                 <div className="community_picture">
